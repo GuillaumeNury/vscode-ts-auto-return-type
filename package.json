@@ -1,15 +1,14 @@
 {
 	"name": "vscode-ts-auto-return-type",
 	"displayName": "TsAutoReturnType",
-	"description": "Automatically print inferred return on your function.",
+	"description":
+		"Automatically print inferred return on your function.",
 	"version": "0.0.1",
-	"publisher": "ebrithil-123",
+	"publisher": "ebrithil30",
 	"engines": {
 		"vscode": "^1.19.0"
 	},
-	"categories": [
-		"Other"
-	],
+	"categories": ["Other"],
 	"activationEvents": [
 		"onCommand:extension.fixPointedFunctions",
 		"onCommand:extension.fixAllFunctionsInFile"
@@ -42,5 +41,9 @@
 	},
 	"dependencies": {
 		"ts-auto-return-type": "^1.0.0"
+	},
+	"repository": {
+		"url":
+			"https://github.com/GuillaumeNury/vscode-ts-auto-return-type"
 	}
 }
