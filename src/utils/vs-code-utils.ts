@@ -1,13 +1,13 @@
 import * as vscode from 'vscode';
 
-import { ITextToInsert } from './models';
+import { ITextToInsert } from 'ts-auto-return-type';
 
-export function applyModifications(
+export async function applyModifications(
 	editor: vscode.TextEditor,
 	editions: ITextToInsert[],
-): void {
+): Promise<boolean> {
 	if (editions.length) {
-		editor.edit(mutator => {
+		return editor.edit(mutator => {
 			for (const edition of editions) {
 				const { line, character } = edition.position;
 

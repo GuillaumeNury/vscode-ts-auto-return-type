@@ -2,12 +2,8 @@
 
 import * as vscode from 'vscode';
 
-import {
-	getModificationsAtPosition,
-	getModificationsForFile,
-} from './executions';
-
-import { applyModifications } from './vs-code-utils';
+import { fixAllFunctionsInFile } from './commands/fixAllFunctionsInFile';
+import { fixPointedFunctions } from './commands/fixPointedFunctions';
 
 export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
@@ -15,49 +11,12 @@ export function activate(context: vscode.ExtensionContext) {
 	// The commandId parameter must match the command field in package.json
 	let registeredCommand1 = vscode.commands.registerCommand(
 		'extension.fixPointedFunctions',
-		() => {
-			const editor = vscode.window.activeTextEditor;
-
-			if (!editor || editor.document.isUntitled) {
-				return;
-			}
-
-			const position = editor.selection.start;
-			const fileName = editor.document.fileName;
-
-			const editions = getModificationsAtPosition(fileName, position);
-
-			applyModifications(editor, editions);
-
-			if (!editions.length) {
-				vscode.window.showInformationMessage(
-					'TsAutoReturnType: Noting to do. Check that your cursor is not on a function and that the pointed function has no return type.',
-				);
-			}
-		},
+		fixPointedFunctions,
 	);
 
 	let registeredCommand2 = vscode.commands.registerCommand(
 		'extension.fixAllFunctionsInFile',
-		() => {
-			const editor = vscode.window.activeTextEditor;
-
-			if (!editor || editor.document.isUntitled) {
-				return;
-			}
-
-			const fileName = editor.document.fileName;
-
-			const editions = getModificationsForFile(fileName);
-
-			applyModifications(editor, editions);
-
-			if (!editions.length) {
-				vscode.window.showInformationMessage(
-					'TsAutoReturnType: Noting to do. Check that your cursor is not on a function and that the pointed function has no return type.',
-				);
-			}
-		},
+		fixAllFunctionsInFile,
 	);
 
 	context.subscriptions.push(registeredCommand1, registeredCommand2);
