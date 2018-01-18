@@ -1,5 +1,5 @@
 {
-	"name": "tsautoreturntype",
+	"name": "vscode-ts-auto-return-type",
 	"displayName": "TsAutoReturnType",
 	"description":
 		"Automatically print inferred return on your function.",
