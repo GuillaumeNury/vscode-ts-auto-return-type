@@ -2,7 +2,7 @@
 	"name": "vscode-ts-auto-return-type",
 	"displayName": "TsAutoReturnType",
 	"description": "Automatically print inferred return on your function.",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"publisher": "ebrithil30",
 	"engines": {
 		"vscode": "^1.19.0"
