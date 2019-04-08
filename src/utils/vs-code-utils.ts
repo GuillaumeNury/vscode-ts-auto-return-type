@@ -1,6 +1,9 @@
 import * as vscode from 'vscode';
 
-import { ITextToInsert } from 'ts-auto-return-type';
+import {
+	ITextToInsert,
+	ITsAutoReturnTypeConfig,
+} from 'ts-auto-return-type';
 
 export async function applyModifications(
 	editor: vscode.TextEditor,
@@ -17,4 +20,17 @@ export async function applyModifications(
 			}
 		});
 	}
+}
+
+const defaultConfig: ITsAutoReturnTypeConfig = {
+	inferArrowFunctionReturnType: false,
+	inferFunctionReturnType: true,
+	inferMethodReturnType: true,
+};
+
+export function getConfig(): ITsAutoReturnTypeConfig {
+	return {
+		...defaultConfig,
+		...vscode.workspace.getConfiguration().get('tsautoreturntype'),
+	};
 }

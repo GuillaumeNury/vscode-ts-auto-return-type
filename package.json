@@ -25,7 +25,28 @@
 				"command": "extension.fixAllFunctionsInFile",
 				"title": "TsAutoReturnType: File"
 			}
-		]
+		],
+		"configuration": {
+			"type": "object",
+			"title": "TsAutoReturnType configuration",
+			"properties": {
+				"tsautoreturntype.inferArrowFunctionReturnType": {
+					"type": "boolean",
+					"default": false,
+					"description": "Infer return type from arrow function"
+				},
+				"tsautoreturntype.inferFunctionReturnType": {
+					"type": "boolean",
+					"default": true,
+					"description": "Infer return type from regular function"
+				},
+				"tsautoreturntype.inferMethodReturnType": {
+					"type": "boolean",
+					"default": true,
+					"description": "Infer return type from class methods"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
