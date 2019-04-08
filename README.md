@@ -8,17 +8,17 @@ At the moment, TS-Auto-Return-Type work only usings commands.
 
 ### Commands
 
-* **TsAutoReturnType: Selected function**
+- **TsAutoReturnType: Selected function**
 
 ![feature X](./images/ts-auto-return-type-function.gif)
 
-* **TsAutoReturnType: File**
+- **TsAutoReturnType: File**
 
 ![feature X](./images/ts-auto-return-type-file.gif)
 
 ## Extension Settings
 
-No settings at the moment, probably later ;)
+![Configuration](./images/ts-auto-return-type-config.png)
 
 ## Known Issues
 
