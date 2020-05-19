@@ -2,7 +2,7 @@
 	"name": "vscode-ts-auto-return-type",
 	"displayName": "TsAutoReturnType",
 	"description": "Automatically print inferred return on your function.",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"publisher": "ebrithil30",
 	"engines": {
 		"vscode": "^1.19.0"
@@ -55,13 +55,13 @@
 		"postinstall": "node ./node_modules/vscode/bin/install"
 	},
 	"devDependencies": {
-		"@types/node": "^11.13.0",
-		"typescript": "^3.4.2",
-		"vsce": "^1.59.0",
-		"vscode": "^1.1.33"
+		"@types/node": "^14.0.1",
+		"typescript": "^3.9.2",
+		"vsce": "^1.75.0",
+		"vscode": "^1.1.37"
 	},
 	"dependencies": {
-		"ts-auto-return-type": "1.1.0"
+		"ts-auto-return-type": "1.2.0"
 	},
 	"repository": {
 		"url": "https://github.com/GuillaumeNury/vscode-ts-auto-return-type"
